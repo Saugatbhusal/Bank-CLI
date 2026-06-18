@@ -18,3 +18,5 @@ class CheckingAccount extends Account {
         return this.balance
     }
 }
+
+module.exports = CheckingAccount

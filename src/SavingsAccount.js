@@ -15,3 +15,5 @@ class SavingsAccount extends Account {
         return this.balance
     }
 }
+
+module.exports = SavingsAccount
