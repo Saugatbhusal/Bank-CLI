@@ -6,3 +6,5 @@ class Transaction {
         this.date = new Date.toISOString();
     }
 }
+
+module.exports = Transaction

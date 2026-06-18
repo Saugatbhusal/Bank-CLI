@@ -26,3 +26,5 @@ class Account {
     getBalance() { return this.balance }
     getHistory() { return [...this.transaction] }
 }
+
+module.exports = Account
