@@ -1,1 +1,41 @@
-[]
+[
+  {
+    "id": "c3b4425e-102e-4164-ae5e-35e34130068c",
+    "owner": null,
+    "balance": 200,
+    "transactions": [
+      [
+        {
+          "type": "deposit",
+          "amount": 200,
+          "description": "Opening balance",
+          "date": "2026-06-19T05:14:28.088Z"
+        }
+      ]
+    ],
+    "type": "SavingsAccount"
+  },
+  {
+    "id": "0838f734-7424-4d28-8417-89bc7bc1b88f",
+    "owner": "harry",
+    "balance": 90,
+    "transactions": [
+      [
+        {
+          "type": "deposit",
+          "amount": 100,
+          "description": "Opening balance",
+          "date": "2026-06-19T06:07:31.369Z"
+        }
+      ],
+      {
+        "type": "withdraw",
+        "amount": 10,
+        "description": "",
+        "date": "2026-06-19T06:07:43.548Z"
+      }
+    ],
+    "overdraftLimit": 100,
+    "type": "CheckingAccount"
+  }
+]

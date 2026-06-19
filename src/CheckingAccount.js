@@ -14,7 +14,7 @@ class CheckingAccount extends Account {
             throw new Error(" You have exceeded the withddraw limit")
         }
         this.balance -= amount
-        this.transaction.push(new Transaction("withdraw", amount))
+        this.transactions.push(new Transaction("withdraw", amount))
         return this.balance
     }
 }
