@@ -46,3 +46,5 @@ function createBank() {
         },
     }
 }
+
+module.exports = createBank
