@@ -1,6 +1,7 @@
 const readline = require('readline');
-const createBank = require('./Bank')
-const bank = createBank()
+const createBank = require('./Bank');
+const storage = require("./storage");
+const bank = createBank();
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout, prompt: ">" })
 
 rl.on('line', (line) => {
@@ -16,22 +17,30 @@ rl.on('line', (line) => {
             }
             break;
         case "deposit":
-            bank.findAccount(id).deposite(args[1])
+            bank.findAccount(args[0]).deposit(args[1])
             break;
         case "balance":
-            bank.findAccount(id).getBalance()
+            console.log(bank.findAccount(args[0]).getBalance())
             break;
         case "history":
-            bank.findAccount(id).getHistory()
+            console.log(bank.findAccount(args[0]).getHistory())
+
             break;
         case "transfer":
-            bank.transfer(args[0], args[1], args[2])
+            console.log(bank.transfer(args[0], args[1], args[2]))
+
             break;
-        case "wirhdraw":
-            bank.findAccount(id).withdraw(args[1])
+        case "withdraw":
+            console.log(bank.findAccount(args[0]).withdraw(args[1]))
+
             break;
         case "list":
-            bank.listAccounts()
+            console.log(bank.listAccounts())
+
+            break;
+        case "save":
+            storage.save("../data.json", bank.serialize())
+            console.log("Saved");
             break;
         default:
             console.log("Unknown command")

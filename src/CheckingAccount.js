@@ -8,9 +8,9 @@ class CheckingAccount extends Account {
 
     }
 
-    withdraw() {
+    withdraw(amount) {
         if (amount <= 0) throw new Error("Amount needs to be positive and greater than 0")
-        if (amount > this.balance + this.withdrawLimit) {
+        if (amount > this.balance + this.overdraftLimit) {
             throw new Error(" You have exceeded the withddraw limit")
         }
         this.balance -= amount
