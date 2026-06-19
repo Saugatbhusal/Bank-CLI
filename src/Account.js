@@ -15,7 +15,7 @@ class Account {
     deposit(amount) {
         if (amount <= 0) throw new Error("Ammount has to be greater then 0")
         this.balance += amount
-        this.transaction.push(new Transaction("deposit", amount))
+        this.transactions.push(new Transaction("deposit", amount))
         return this.balance
     }
 
@@ -27,7 +27,7 @@ class Account {
     }
 
     getBalance() { return this.balance }
-    getHistory() { return [...this.transaction] }
+    getHistory() { return [...this.transactions] }
 }
 
 module.exports = Account

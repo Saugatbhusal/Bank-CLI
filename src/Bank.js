@@ -11,10 +11,13 @@ function createBank() {
             let account
             if (type === "savings") {
                 account = new SavingsAccount(owner, openingBalance)
+                console.log(`Account created! ID: ${account.id}`);
             } else if (type === "checking") {
                 account = new CheckingAccount(owner, openingBalance)
+                console.log(`Account created! ID: ${account.id}`);
             } else {
                 account = new Account(owner, openingBalance)
+                console.log(`Account created! ID: ${account.id}`);
             }
             accounts.push(account)
             return account
