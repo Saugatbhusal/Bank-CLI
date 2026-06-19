@@ -19,12 +19,22 @@ rl.on('line', (line) => {
             bank.findAccount(id).deposite(args[1])
             break;
         case "balance":
-            accounts.find((accou) => accou.id === args[0]).getBalance(args[1])
+            bank.findAccount(id).getBalance()
             break;
         case "history":
-            accounts.find((accou) => accou.id === args[0]).getHistory(args[1])
+            bank.findAccount(id).getHistory()
             break;
         case "transfer":
+            bank.transfer(args[0], args[1], args[2])
+            break;
+        case "wirhdraw":
+            bank.findAccount(id).withdraw(args[1])
+            break;
+        case "list":
+            bank.listAccounts()
+            break;
+        default:
+            console.log("Unknown command")
 
 
     }
