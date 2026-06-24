@@ -7,7 +7,8 @@ A command-line banking application built with Node.js. Demonstrates core JavaScr
 - **OOP & Inheritance** — `SavingsAccount` and `CheckingAccount` extend a base `Account` class
 - **Closure pattern** — `createBank()` uses a factory function with a private `accounts` array, inaccessible from outside
 - **Event-driven CLI** — `readline` module listens for user input line by line
-- **Persistent storage** — accounts are serialized to JSON and reloaded on startup
+- - **Persistent storage** — accounts are converted to JSON with `JSON.stringify` on save and parsed back into class instances with `JSON.parse` on startup
+
 
 ## Installation
 
