@@ -10,43 +10,48 @@ function startCli(bank) {
             switch (command) {
                 case "open":
                     if (args[0] === "savings") {
-                        bank.openAccount("savings", args[1], Number(args[2]));
-    
+                        bank.openAccount("savings", args[1], Number(args[2]), Number(args[3]));
+
                     } else if (args[0] === "checking") {
                         bank.openAccount("checking", args[1], Number(args[2]));
-    
+
                     }
                     break;
                 case "deposit":
                     console.log(bank.findAccount(args[0]).deposit(Number(args[1])))
-    
+
+                    break;
+                case "addinterest":
+                    console.log(bank.findAccount(args[0]).addInterest())
                     break;
                 case "balance":
                     console.log(bank.findAccount(args[0]).getBalance())
                     break;
                 case "history":
                     console.log(bank.findAccount(args[0]).getHistory())
-    
+
                     break;
                 case "transfer":
                     console.log(bank.transfer(args[0], Number(args[1]), Number(args[2])))
                     break;
                 case "withdraw":
                     console.log(bank.findAccount(args[0]).withdraw(Number(args[1])))
-    
+
                     break;
                 case "list":
                     console.log(bank.listAccounts())
-    
+
                     break;
                 case "save":
                     storage.save("./data.json", bank.serialize())
                     console.log("Saved");
                     break;
+                case "quit":
+                    process.exit(0)
                 default:
                     console.log("Unknown command")
-    
-    
+
+
             }
         } catch (err) { console.log(`Error: ${err.message}`) }
 

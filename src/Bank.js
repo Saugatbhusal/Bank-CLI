@@ -7,10 +7,10 @@ function createBank() {
     const accounts = []
 
     return {
-        openAccount(type, owner, openingBalance) {
+        openAccount(type, owner, openingBalance, interestRate) {
             let account
             if (type === "savings") {
-                account = new SavingsAccount(owner, openingBalance)
+                account = new SavingsAccount(owner, openingBalance, interestRate)
                 console.log(`Account created! ID: ${account.id}`);
             } else if (type === "checking") {
                 account = new CheckingAccount(owner, openingBalance)
@@ -31,7 +31,7 @@ function createBank() {
         transfer(formId, toId, amount) {
             const form = accounts.find((a) => a.id === formId)
             const to = accounts.find((a) => a.id === toId)
-            if (!from || !to) {
+            if (!form || !to) {
 
                 throw new Error("Account not fount")
             }

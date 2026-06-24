@@ -8,7 +8,7 @@ class Account {
         this.balance = openingBalance;
         this.transactions = []
         if (openingBalance > 0) {
-            this.transactions.push([new Transaction("deposit", openingBalance, "Opening balance")])
+            this.transactions.push(new Transaction("deposit", openingBalance, "Opening balance"))
         }
     }
 
