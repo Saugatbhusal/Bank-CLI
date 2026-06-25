@@ -37,7 +37,7 @@ function createBank() {
             }
             form.withdraw(amount)
             to.deposit(amount)
-
+            return "Fund has been transfered"
         },
         listAccounts() {
             return accounts.map((a) => ({
@@ -54,7 +54,7 @@ function createBank() {
         load(data) {
             data.forEach((row) => {
                 const acc = this.openAccount(row.type.replace("Account", "").toLowerCase(),
-                    row.owner, 0);
+                    row.owner, 0, row.interestRate);
                 acc.balance = row.balance;
                 acc.transactions = row.transactions;
                 acc.id = row.id;

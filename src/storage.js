@@ -3,8 +3,9 @@ const fs = require("fs");
 function storage() {
     return {
         load(path) {
-            if (!fs.existsSync(path)) return [];
+            if (!fs.existsSync(path)) return []; // if file is empty it return ""
             const raw = fs.readFileSync(path, "utf-8");
+            if (!raw.trim()) return []; // raw.trim return "" 
             return JSON.parse(raw);
         },
 

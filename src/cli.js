@@ -32,7 +32,7 @@ function startCli(bank) {
 
                     break;
                 case "transfer":
-                    console.log(bank.transfer(args[0], Number(args[1]), Number(args[2])))
+                    console.log(bank.transfer(args[0], args[1], Number(args[2])))
                     break;
                 case "withdraw":
                     console.log(bank.findAccount(args[0]).withdraw(Number(args[1])))
